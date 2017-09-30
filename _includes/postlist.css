@@ -1,0 +1,41 @@
+#posts{
+	margin-bottom: 33vh;
+}
+.post{
+	margin-bottom: 25px;
+}
+.post-background{
+  background-position: center;
+  background-size: cover;
+  /*background-repeat: no-repeat;*/
+  background-attachment: fixed;
+}
+.post-shadow {
+	padding: 30px 15vw 60px 15vw;
+	font-weight: bold;
+	text-shadow: 2px 2px {{ site.style.background-hex }};
+}
+.post-shadow:hover{
+	background: rgba({{ site.style.background-rgb }} 0.8);
+}
+.post * {
+	text-decoration: none;
+	color: {{ site.style.text }};
+}
+.post h2{
+	color: {{ site.style.highlight }};
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 4vh;
+}
+.post p{
+	font-size: 2.5vh;
+}
+.post-date {
+	margin-top: 0;
+}
+.divider{
+	width: 100%;
+	height: 0.2vh;
+	background: {{ site.style.text}}
+}

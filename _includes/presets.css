@@ -1,0 +1,27 @@
+body, html {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-family: monospace;
+	color: {{ site.style.text }};
+}
+a {
+	text-decoration: none;
+	color: {{ site.style.highlight }}
+}
+.nobr	{ white-space:nowrap; }
+/* Force mobile browsers not to remove their
+url bar when scrolling.
+It breaks basically the whole layout */
+@media (max-width: 500px){
+	html{
+		overflow-y: hidden;
+	}
+	body{
+		overflow-y: scroll;
+		-webkit-overflow-scrolling: touch;
+	}
+}

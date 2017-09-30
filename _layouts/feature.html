@@ -1,0 +1,24 @@
+---
+layout: default
+custom_style_includes:
+- feature
+---
+<div id="info-container">
+	<div id="about-content">
+		<div id="about-images">
+		  <div class="clearer"></div>
+		</div>
+		<div id="about-text">
+		</div>
+	</div>
+</div>
+<div id="gallery-container">
+	<div id="gallery">
+		{% for entry in site[page.feature] %}
+		{% assign gallery = entry.images %}
+		{% for image in gallery %}
+		<img src="/tattoos/{{ image }}">
+		{% endfor %}
+		{% endfor %}
+	</div>
+</div>

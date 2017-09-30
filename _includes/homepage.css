@@ -1,0 +1,43 @@
+#image {
+	background-position: center;
+	background-size: cover;
+	width: 20vh;
+	height: 20vh;
+	border-radius: 30vh;
+	background-image: url("/assets/images/{{ page.avatar-image }}");
+}
+.icon {
+	width: 20px;
+	height: 20px;
+	background: #fff;
+}
+#tattoos-icon{
+	background-image: url("/assets/images/tattoos-icon.jpg");
+}
+body:hover #tattoos-icon{
+	background-imgage: url("/assets/images/tattoos-icon-hover.jpg");
+} 
+#brows-icon{
+	background-image: url("/assets/images/brows-icon.jpg");
+}
+body:hover #brows-icon{
+	background-imgage: url("/assets/images/brows-icon-hover.jpg");
+}
+#commission-icon{
+	background-image: url("/assets/images/commission-icon.jpg");
+}
+body:hover #commission-icon{
+	background-imgage: url("/assets/images/commission-icon-hover.jpg");
+} 
+#contact-icon{
+	background-image: url("/assets/images/contact-icon.jpg");
+}
+body:hover #contact-icon{
+	background-imgage: url("/assets/images/contact-icon-hover.jpg");
+} 
+#bio-icon{
+	background-image: url("/assets/images/bio-icon.jpg");
+}
+body:hover #bio-icon{
+	background-imgage: url("/assets/images/bio-icon-hover.jpg");
+} 

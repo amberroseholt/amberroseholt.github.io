@@ -1,0 +1,34 @@
+
+title: Amber-Rose Art
+email: your-email@domain.com
+description: > # this means to ignore newlines until "baseurl:"
+  The personal site for Amber-Rose Holt
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://amberroseholt.github.io" # the base hostname & protocol for your site
+github_username: amberroseholt
+
+permalink: :title/
+
+collections:
+- tattoos
+- brows
+- commission
+
+# Build settings
+markdown: kramdown
+compress_html:
+  comments: all
+sass:
+  style: compressed
+
+#Jekyll Sitemap must come after any gems which generate content
+#gems which come after sitemap will not be included in the sitemap
+gems:
+  - jekyll-sitemap
+
+# Style settings - will be used in css
+style:
+    text: "#cfcfc9"
+    highlight: "#d05d5d"
+    background-rgb: "55, 55, 49,"
+    background-hex: "#373731"
