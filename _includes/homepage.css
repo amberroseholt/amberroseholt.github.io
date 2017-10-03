@@ -6,38 +6,63 @@
 	border-radius: 30vh;
 	background-image: url("/assets/images/{{ page.avatar-image }}");
 }
-.icon {
-	width: 20px;
-	height: 20px;
-	background: #fff;
+
+#icons-container {
+	width: auto;
+	height: auto;
 }
-#tattoos-icon{
-	background-image: url("/assets/images/tattoos-icon.jpg");
+#icons-list {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	text-align: center;
 }
-body:hover #tattoos-icon{
-	background-imgage: url("/assets/images/tattoos-icon-hover.jpg");
-} 
+.icon-list-elem {
+	display: inline;
+}
+/* Style for the navigation icons */
+.icon-img-elem {
+	width: 80px;
+	height: 80px;
+	border-radius: 40px;
+	background-size: cover;
+	display: inline-block;
+}
+.icon-img-elem {
+	box-shadow: 0em 0em 2em #000;
+}
+#tattoos-icon {
+	background-image: url("/assets/images/tattoos-icon.png");
+}
 #brows-icon{
-	background-image: url("/assets/images/brows-icon.jpg");
-}
-body:hover #brows-icon{
-	background-imgage: url("/assets/images/brows-icon-hover.jpg");
+	background-image: url("/assets/images/brows-icon2.png");
 }
 #commission-icon{
-	background-image: url("/assets/images/commission-icon.jpg");
+	background-image: url("/assets/images/commission-icon.png");
 }
-body:hover #commission-icon{
-	background-imgage: url("/assets/images/commission-icon-hover.jpg");
-} 
 #contact-icon{
-	background-image: url("/assets/images/contact-icon.jpg");
+	background-image: url("/assets/images/contact-icon.png");
 }
+#bio-icon {
+	background-image: url("/assets/images/bio-icon.png");
+}
+/*
+body:hover #tattoos-icon{
+	background-image: url("/assets/images/tattoo-icon-hover.png");
+}
+
+body:hover #brows-icon{
+	background-imgage: url("/assets/images/brows-icon-hover.png");
+}
+
+body:hover #commission-icon{
+	background-image: url("/assets/images/commission-icon-hover.png");
+} 
+
 body:hover #contact-icon{
-	background-imgage: url("/assets/images/contact-icon-hover.jpg");
+	background-image: url("/assets/images/contact-icon-hover.png");
 } 
-#bio-icon{
-	background-image: url("/assets/images/bio-icon.jpg");
-}
+
 body:hover #bio-icon{
-	background-imgage: url("/assets/images/bio-icon-hover.jpg");
-} 
+	background-image: url("/assets/images/bio-icon-hover.png");
+}*/
