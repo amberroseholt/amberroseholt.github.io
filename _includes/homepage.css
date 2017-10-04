@@ -1,3 +1,7 @@
+.center {
+	margin: auto;
+	text-align: center;
+}
 #image {
 	background-position: center;
 	background-size: cover;
