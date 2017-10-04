@@ -27,7 +27,9 @@
 }
 .icon-list-elem {
 	display: inline;
+	white-space: nowrap;
 }
+
 /* Style for the navigation icons */
 .icon-img-elem {
 	width: 80px;
