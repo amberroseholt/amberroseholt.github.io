@@ -37,6 +37,11 @@
 	background-size: cover;
 	display: inline-block;
 }
+.icon-img-elem {
+	border-style: solid;
+	border-width: 2px;
+	border-color: #000; 
+}
 .icon-shadow {
 	background-color: rgba(0, 0, 0, 0.2);
 	box-shadow: 0em 0em 2em #000;
