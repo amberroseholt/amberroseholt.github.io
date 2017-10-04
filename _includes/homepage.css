@@ -1,3 +1,7 @@
+#content {
+	padding-top: 10vh;
+}
+
 .center {
 	margin: auto;
 	text-align: center;
@@ -5,8 +9,8 @@
 #image {
 	background-position: center;
 	background-size: cover;
-	width: 20vh;
-	height: 20vh;
+	width: 30vh;
+	height: 30vh;
 	border-radius: 30vh;
 	background-image: url("/assets/images/{{ page.avatar-image }}");
 }
