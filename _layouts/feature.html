@@ -2,24 +2,33 @@
 layout: default
 custom_style_includes:
 - feature
+- gallery
+custom_js:
+- reveal
+custom_css:
+- reveal
+- theme
 ---
 <div id="info-container">
-	<div id="about-content">
-		<div id="about-images">
-		  <div class="clearer"></div>
-		</div>
-		<div id="about-text">
+	<div id="info-content">
+		<div id="info-text">
 			{{ content }}
 		</div>
 	</div>
 </div>
 <div id="gallery-container">
-	<div id="gallery">
-		{% for entry in site[page.feature] %}
-		{% assign gallery = entry.images %}
-		{% for image in gallery %}
-		<img src="/tattoos/{{ image }}">
-		{% endfor %}
-		{% endfor %}
-	</div>
+	{% include gallery.html %}
 </div>
+<script>
+	Reveal.initialize({
+		progress: false,
+		defaultTiming: 5,
+		overview: false,
+		loop: true,
+		embedded: true,
+		fragments: false,
+		help: false,
+		autoslide: 5000,
+		transitionSpeed: 'fast',
+	});
+</script>

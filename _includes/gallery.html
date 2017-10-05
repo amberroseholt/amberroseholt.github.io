@@ -1,0 +1,10 @@
+<div class="reveal">
+	<div class="slides">
+	{{ site[page.feature] }}
+	{% for entry in site[page.feature] %}{% assign gallery = entry.images %}
+	{% for image in gallery %}
+	<section><img data-src="/{{ page.feature }}/{{ image }}"></section>
+	{% endfor %}
+	{% endfor %}
+	</div>
+</div>
