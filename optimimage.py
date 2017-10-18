@@ -1,14 +1,22 @@
 import yaml
 import os
+import git
+import pprint
 
 YAML_FILE = "gallery.md"
 FOLDERS = ["_tattoos","_brows","_commission"]
 
+#Link git with python
+repo = git.Repo()
+#Get the staged files
+diffs = repo.index.diff('HEAD')
+staged_files = [x.a_blob.path for x in diffs if hasattr(x, 'a_blob') and x.a_blob != None ]
+
 #Directory of this file
-dir = os.path.dirname(__file__)
+dir = os.path.dirname(os.path.abspath(__file__))
 
 #For each gallery directory, find all files and build the yaml.
-for folder in FOLDERS: 
+for folder in FOLDERS:
 
 	#generate the path to the yaml file Jekyll will use
     folderpath = os.path.join(dir, folder)
@@ -22,7 +30,7 @@ for folder in FOLDERS:
         data = yaml.load_all(stream)
         knownimages = data.next()['images'] or []
         stream.close()
-    
+
     #Generate a list of images that are there right now
     realimages = []
     for file in os.listdir(folderpath):
@@ -32,19 +40,33 @@ for folder in FOLDERS:
             realimages.append(file)
 
     #Some images may have been removed since the yaml was last updated
-    #Let's remove those entries 
+    #Let's remove those entries
     images = [img for img in knownimages if img in realimages]
-    
+
     #Now get the images that need compressing and adding to the yaml
     newimages = [img for img in realimages if img not in knownimages]
 
     #Compress the image and remember it
     for image in newimages:
-        #TODO: Compress Image
-        images.append(image)
+        imagepath = os.path.join(folder, image)
+        print(image)
+        #Compress, re-stage, and remember the images
+        if imagepath in staged_files:
+            print(image)
+            if image.endswith(".jpg") or image.endswith(".jpeg"):
+                os.system("convert " + imagepath + " -sampling-factor 4:2:0 -strip -quality 85 -interlace JPEG -colorspace RGB " + imagepath)
+                repo.git.add(imagepath)
+            elif image.endswith(".png"):
+                os.system("optipng -quiet -o1 -strip all " + imagepath);
+                repo.git.add(imagepath)
+            #Remember the images
+            images.append(image)
 
     #Write the new yaml
     with open(yamlfile, 'w+') as outfile:
     	outfile.write("---\n")
         yaml.dump({'images':images}, outfile, default_flow_style=False)
         outfile.write("---")
+
+    #Restage the yaml file:
+    repo.git.add(yamlfile)
