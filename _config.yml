@@ -7,6 +7,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://amberroseholt.github.io" # the base hostname & protocol for your site
 github_username: amberroseholt
 
+#Remember to change the API key settings to whitelist whatever domain we settle on!
+google-query: https://www.google.com/maps/embed/v1/place?key=AIzaSyCePkJNFvzIWWAPAUqlL5y7rvmhPxCA2Cg&zoom=16&q=Boss+Shop,Hinkley,England
+
 permalink: :title/
 
 collections:

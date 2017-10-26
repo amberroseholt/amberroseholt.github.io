@@ -15,7 +15,7 @@ body{
 	line-height: 1.5;
 	background: rgba({{ site.style.background-rgb }} 0.7);
 }
-#gallery-container{
+#feature-container{
 	height: 100%;
 }
 .slides{
@@ -23,7 +23,7 @@ body{
 }
 /* Different looks for non-mobiles... */
 @media (min-width: 750px){
-	#gallery-container, #info-container {
+	#feature-container, #info-container {
 		vertical-align: top;
 		display: inline-block;
 		width: 49%;

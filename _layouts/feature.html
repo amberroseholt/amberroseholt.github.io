@@ -16,19 +16,7 @@ custom_css:
 		</div>
 	</div>
 </div>
-<div id="gallery-container">
-	{% include gallery.html %}
+<div id="feature-container">
+	{% include {{page.feature}}.html %}
 </div>
-<script>
-	Reveal.initialize({
-		progress: false,
-		defaultTiming: 5,
-		overview: false,
-		loop: true,
-		embedded: true,
-		fragments: false,
-		help: false,
-		autoslide: 5000,
-		transitionSpeed: 'fast',
-	});
-</script>
+
