@@ -1,7 +1,6 @@
 import yaml
 import os
 import git
-import pprint
 
 YAML_FILE = "gallery.md"
 FOLDERS = ["_tattoos","_brows","_commission"]
@@ -52,13 +51,11 @@ for folder in FOLDERS:
         print(image)
         #Compress, re-stage, and remember the images
         if imagepath in staged_files:
-            print(image)
             if image.endswith(".jpg") or image.endswith(".jpeg"):
                 os.system("convert " + imagepath + " -sampling-factor 4:2:0 -strip -quality 85 -interlace JPEG -colorspace RGB " + imagepath)
-                repo.git.add(imagepath)
             elif image.endswith(".png"):
                 os.system("optipng -quiet -o1 -strip all " + imagepath);
-                repo.git.add(imagepath)
+            repo.git.add(imagepath)
             #Remember the images
             images.append(image)
 
