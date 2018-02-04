@@ -15,6 +15,10 @@ body{
 	line-height: 1.5;
 	background: rgba({{ site.style.background-rgb }} 0.7);
 }
+#info-text img{
+    width: 100%;
+    height: 100%;
+}
 #feature-container{
 	height: 100%;
 }
@@ -23,17 +27,22 @@ body{
 }
 /* Different looks for non-mobiles... */
 @media (min-width: 750px){
-	#feature-container, #info-container {
+    #info-container,
+    #feature-container {
 		vertical-align: top;
 		display: inline-block;
-		width: 49%;
 		font-size: 2vh;
+	}
+	#info-container{
+	    width: calc(99% - 100vh);
 	}
 	#info-content {
 		padding: 25px;
 		margin: 10px 25px;
 	}
-	.gallery-block-content{
+	#feature-container{
+	    width: 100vh;
+	    height: 100vh;
 		line-height: initial;
 	}
 }
